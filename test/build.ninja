@@ -1,0 +1,32 @@
+# Basic variables
+cc = gcc
+cxx = g++
+cflags = -Wall -Wextra -g
+ldflags =
+
+# Rules
+rule compile_c
+  command = $cc $cflags -c $in -o $out
+  description = Compiling C file $in
+
+rule compile_cpp
+  command = $cxx $cflags -c $in -o $out
+  description = Compiling C++ file $in
+
+rule link
+  command = $cxx $ldflags $in -o $out
+  description = Linking $out
+
+# Clean command rule
+rule clean_cmd
+  command = rm -f *.o app
+  description = Cleaning build files
+
+# Build statements
+build main.o: compile_cpp src/main.cpp
+build utils.o: compile_cpp src/utils.cpp
+build helper.o: compile_c src/helper.c
+build app: link main.o utils.o helper.o
+
+# Phony targets
+build clean: clean_cmd
