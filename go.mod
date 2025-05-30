@@ -1,3 +1,3 @@
-module github.com/distninja/dag
+module github.com/distninja/graph
 
 go 1.23.6

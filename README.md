@@ -1,15 +1,14 @@
-# dag
+# graph
 
-[![Build Status](https://github.com/distninja/dag/workflows/ci/badge.svg?branch=main&event=push)](https://github.com/distninja/dag/actions?query=workflow%3Aci)
-[![codecov](https://codecov.io/gh/distninja/dag/branch/main/graph/badge.svg?token=t31YICk0ek)](https://codecov.io/gh/distninja/dag)
-[![License](https://img.shields.io/github/license/distninja/dag.svg)](https://github.com/distninja/dag/blob/main/LICENSE)
-[![Tag](https://img.shields.io/github/tag/distninja/dag.svg)](https://github.com/distninja/dag/tags)
+[![Build Status](https://github.com/distninja/graph/workflows/ci/badge.svg?branch=main&event=push)](https://github.com/distninja/graph/actions?query=workflow%3Aci)
+[![License](https://img.shields.io/github/license/distninja/graph.svg)](https://github.com/distninja/graph/blob/main/LICENSE)
+[![Tag](https://img.shields.io/github/tag/distninja/graph.svg)](https://github.com/distninja/graph/tags)
 
 
 
 ## Introduction
 
-*dag* is the ninja dag of [distninja](https://github.com/distninja) written in Go.
+*graph* is the graph store of [distninja](https://github.com/distninja) written in Go.
 
 
 
@@ -21,7 +20,7 @@
 
 ## Example
 
-Project example can be found [here](https://github.com/distninja/dag/blob/main/example/main.go).
+Project example can be found [here](https://github.com/distninja/graph/blob/main/example/main.go).
 
 
 
