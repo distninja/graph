@@ -1,15 +1,14 @@
 #!/bin/bash
 
-ldflags="-s -w"
-target="graph"
+mkdir build
 
-go env -w GOPROXY=https://goproxy.cn,direct
-
-# Executable
-CGO_ENABLED=1 GOARCH=$(go env GOARCH) GOOS=$(go env GOOS) go build -ldflags "$ldflags" -o bin/$target main.go
-
-# Library
-CGO_ENABLED=1 GOARCH=$(go env GOARCH) GOOS=$(go env GOOS) go build -ldflags "$ldflags" -buildmode=c-archive -o bin/$target.a main.go
-
-# Test
-g++ -o bin/test -I bin test/main.cc bin/$target.a -lpthread
+pushd build
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo "Running on Linux"
+    cmake ..
+    cmake --build .
+elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "cygwin" ]]; then
+    echo "Running on Windows (MinGW/MSYS/Cygwin)"
+    CC=gcc CXX=g++ cmake -G "MinGW Makefiles" .. && mingw32-make -j4
+fi
+popd
