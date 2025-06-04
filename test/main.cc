@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "graph.h"
+#include "libgraph.h"
 
 int main() {
     char* result = Hello(const_cast<char*>("World"));
